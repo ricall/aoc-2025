@@ -5,6 +5,9 @@ plugins {
 }
 
 dependencies {
+    implementation("com.github.shiguruikai:combinatoricskt:1.6.0")
+    implementation("tools.aqua:z3-turnkey:4.14.1")
+
     testImplementation(platform("org.junit:junit-bom:5.10.0")) // Adjust version as needed
     testImplementation("org.junit.jupiter:junit-jupiter-api")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
