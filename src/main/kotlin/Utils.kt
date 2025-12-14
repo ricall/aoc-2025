@@ -6,11 +6,10 @@ import kotlin.io.path.readText
 
 fun String.toInput() = this.trimMargin("|").lines()
 
-/**
- * Reads lines from the given input txt file.
- */
-fun readInput(name: String) = Path("input/$name.txt").readText().lines()
 
+fun readRaw(name: String) = Path("input/$name.txt").readText()
+fun readInput(name: String) = readRaw(name).lines()
+fun String.parts(): List<String> = this.split("\n\n")
 fun List<String>.firstPart() = this.stream().takeWhile { !it.isBlank() }.collect(Collectors.toList())
 fun List<String>.secondPart() = this.stream().dropWhile { !it.isBlank() }.skip(1).collect(Collectors.toList())
 
